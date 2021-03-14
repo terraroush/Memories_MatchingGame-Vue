@@ -24,14 +24,16 @@ export default {
 
   methods: {
     handleClick() {
-      this.$emit("select", this.language);
+      this.$emit("select", this.tripPics);
     },
   },
   computed: {
     isShown() {
-      return this.tripPics.foundMatch ||
+      return (
+        this.tripPics.foundMatch ||
         this.tripPics === this.guess1 ||
         this.tripPics === this.guess2
+      );
     },
   },
 };

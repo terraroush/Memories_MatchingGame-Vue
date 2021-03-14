@@ -1,11 +1,11 @@
 <template>
   <div>
-      <h1 v-if="foundAllMatches">Congrats! You found them!</h1>
+    <h1 v-if="foundAllMatches">Congrats! You found them!</h1>
     <h1 v-else>Find all the matches</h1>
     <div class="game-board">
       <div v-for="tripPic in tripPics" :key="tripPic.id" class="cell">
         <card
-          :tripPic="tripPic"
+          :tripPics="tripPic"
           @select="handleCardClick"
           :guess1="guess1"
           :guess2="guess2"
@@ -30,20 +30,20 @@ export default {
     };
   },
   methods: {
-    handleCardClick(languageClicked) {
+    handleCardClick(tripPicClicked) {
       // if there are two cards already flipped prevent a third from being flipped
       if (this.guess1 && this.guess2) return;
       // if the user clicked the same card twice don't do anything
-      if (this.guess1 === languageClicked) return;
+      if (this.guess1 === tripPicClicked) return;
       if (this.guess1 === null) {
-        this.guess1 = languageClicked;
+        this.guess1 = tripPicClicked;
         return;
       }
-      this.guess2 = languageClicked;
-      const [lang1, lang2] = this.getMatchingLangs(languageClicked.name);
+      this.guess2 = tripPicClicked;
+      const [pic1, pic2] = this.getMatchingPics(tripPicClicked.name);
       if (this.guess1.name === this.guess2.name) {
-        lang1.foundMatch = true;
-        lang2.foundMatch = true;
+        pic1.foundMatch = true;
+        pic2.foundMatch = true;
         this.guess1 = null;
         this.guess2 = null;
       } else {
@@ -54,15 +54,15 @@ export default {
         }, 1500);
       }
     },
-    getMatchingLangs(name) {
-      return this.languages.filter(l => l.name === name);
-    }
+    getMatchingPics(name) {
+      return this.tripPics.filter((p) => p.name === name);
+    },
   },
   computed: {
     foundAllMatches() {
-      return this.languages.every(l => l.foundMatch);
-    }
-  }
+      return this.tripPics.every((p) => p.foundMatch);
+    },
+  },
 };
 </script>
 
