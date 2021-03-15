@@ -3,12 +3,14 @@
     <div class="card-inner" @click="handleClick">
       <div class="backside">
         <img
-          src="@/assets/images/black-flora-playing-cards.png"
+          class="back"
+          src="@/assets/images/black-flora-playing-cards.jpeg"
           alt="hidden card"
         />
       </div>
       <div class="picSide">
         <img
+          class="pic"
           :src="require('@/assets/images/' + tripPics.image)"
           :alt="tripPics.name"
           :title="tripPics.name"
@@ -40,13 +42,16 @@ export default {
 </script>
 
 <style scoped>
-img {
-  height: 200px;
+img,
+.pic {
+  height: 150px;
+  border-radius: 10px;
 }
+
 .card {
   background-color: transparent;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 150px;
   perspective: 1000px;
   margin-top: 20px;
 }
@@ -57,6 +62,7 @@ img {
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  margin-top: 3px;
 }
 .flipped .card-inner {
   transform: rotateY(180deg);
@@ -69,11 +75,7 @@ img {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.backside {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 60px;
-}
+
 .picSide {
   color: black;
   transform: rotateY(180deg);

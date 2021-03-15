@@ -37,18 +37,6 @@ export default function getTripPicsCards() {
       foundMatch: false,
     },
     {
-      id: 7,
-      name: "morningMarket",
-      image: "morningMarket.jpeg",
-      foundMatch: false,
-    },
-    {
-      id: 8,
-      name: "morningMarket",
-      image: "morningMarket.jpeg",
-      foundMatch: false,
-    },
-    {
       id: 9,
       name: "natureWins",
       image: "natureWins.jpeg",
@@ -72,18 +60,7 @@ export default function getTripPicsCards() {
       image: "scottCooks.jpeg",
       foundMatch: false,
     },
-    {
-      id: 13,
-      name: "sunset",
-      image: "sunset.jpeg",
-      foundMatch: false,
-    },
-    {
-      id: 14,
-      name: "sunset",
-      image: "sunset.jpeg",
-      foundMatch: false,
-    },
+
     {
       id: 15,
       name: "terraCooks",
@@ -142,6 +119,19 @@ export default function getTripPicsCards() {
       id: 24,
       name: "festivalSelfie",
       image: "festivalSelfie.jpeg",
+      foundMatch: false,
+    },
+    {
+      id: 25,
+      name: "scottLantern",
+      image: "scottLantern.jpg",
+      foundMatch: false,
+    },
+
+    {
+      id: 26,
+      name: "sunset",
+      image: "sunset.jpeg",
       foundMatch: false,
     },
   ];

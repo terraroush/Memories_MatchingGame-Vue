@@ -1,7 +1,8 @@
 <template>
   <div>
-    <h1 v-if="foundAllMatches">Congrats! You found them!</h1>
-    <h1 v-else>Find all the matches</h1>
+      <h1 class="neon">Thailand Memories Memory Game</h1>
+    <h2 v-if="foundAllMatches">Congrats! You found them!</h2>
+    <h2 v-else>Find all the matches</h2>
     <div class="game-board">
       <div v-for="tripPic in tripPics" :key="tripPic.id" class="cell">
         <card
@@ -67,8 +68,21 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  color: white;
+
+.neon {
+    margin-bottom: 0;
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff,
+    0 0 180px #0ff,
+    0 0 200px #0ff;
 }
 .game-board {
   display: flex;
@@ -76,7 +90,7 @@ h1 {
   align-items: space-between;
   justify-content: center;
 }
-.cell {
+/* .cell {
   padding: 10px;
-}
+} */
 </style>
