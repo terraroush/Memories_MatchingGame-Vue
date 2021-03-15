@@ -127,9 +127,22 @@ export default function getTripPicsCards() {
       image: "scottLantern.jpg",
       foundMatch: false,
     },
-
     {
       id: 26,
+      name: "scottLantern",
+      image: "scottLantern.jpg",
+      foundMatch: false,
+    },
+
+    {
+      id: 27,
+      name: "sunset",
+      image: "sunset.jpeg",
+      foundMatch: false,
+    },
+
+    {
+      id: 28,
       name: "sunset",
       image: "sunset.jpeg",
       foundMatch: false,
