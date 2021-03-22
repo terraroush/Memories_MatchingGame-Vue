@@ -2,4 +2,4 @@
 
 App deployed with Firebase:
 
-<https://dunetrivia.web.app/>
+<https://matchinggame-thailand.web.app>
